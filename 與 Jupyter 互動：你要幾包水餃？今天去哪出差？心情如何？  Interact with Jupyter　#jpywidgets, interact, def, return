@@ -1,0 +1,44 @@
+# 請問你想買幾包水餃？
+
+%matplotlib inline
+import matplotlib.pyplot as plt
+import numpy as np
+
+from ipywidgets import interact
+
+def f(Qty):
+    return "下訂 {} 包水餃".format(Qty)
+interact(f, Qty = (1, 10))
+
+
+
+# 今天的出差行程是？
+
+def f(今天星期幾):
+    print("請去" + 今天星期幾)
+interact(f, 今天星期幾 = {"(一) Mon":"台北／Taipei",
+                     "(二) Tue":"台中／Taichung",
+                     "(三) Wed":"雲林／Yunlin",
+                     "周末 Weekends":"高雄／Kaohsiung"})
+
+
+
+# 心情 x 圖形互動
+
+def f(n):  
+    print('●●●' * n + '○○○' * (10-n))
+    print('●●●' * n + '○○○' * (10-n))
+    print('●●●' * n + '○○○' * (10-n))  
+    return '--'
+
+n = int(input('你現在的心情，1 到 10 分給幾分？ '))
+print(f(n))
+
+if n >= 7:
+    print('''
+哇，這麼好嗎！''')
+
+else:
+    print('''
+怎麼了嗎？我們都在你身邊！ :) ''')
+
